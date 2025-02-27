@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <style>
+   body {
+  background-image: url('/background2.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  width: 500px;
+  margin: 20px auto;
+  background-color: aqua;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+#task-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+#task-form input,
+#task-form textarea {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#task-list li {
+  border: 1px solid #ddd;
+  padding: 6px;
+  margin-right: 40px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(7, 242, 18);
+  border-radius: 10px;
+}
+
+#task-list li:not(.completed) div:first-child {
+    border-radius: 10px;
+  background-color: yellow;
+}
+
+
+.completed div:first-child {
+  background-color: green;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+#task-list li button {
+
+    align-self: start;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+#task-list li button:first-child {
+  background-color: #0971e7;
+  color: white;
+}
+
+#task-list li button:last-child {
+  margin-right: 10px;
+  background-color: #e1071d;
+  color: white;
+}
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>Task Manager</h1>
+    <div id="task-form">
+      <input type="text" id="title" placeholder="Title" required>
+      <textarea id="description" placeholder="Description"></textarea>
+      <button id="add-task">Add Task</button>
+    </div>
+    <ul id="task-list"></ul>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
